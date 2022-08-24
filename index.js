@@ -16,6 +16,8 @@ function updateLimit(limit) {}
 // });
 
 $(document).ready(function () {
+  $(".loading").hide();  
+
   $("#limit").change(function () {
     var limit = $("#limit").val();
     // console.log(limit);
@@ -27,8 +29,14 @@ $(document).ready(function () {
         url: "https://api.api-ninjas.com/v1/facts?limit=" + limit,
         headers: { "X-Api-Key": key },
         contentType: "application/json",
-        success: function (result) {
+        
+        beforeSend: function () {
           $(".facts").empty();
+          $(".loading").show();  
+        },
+        
+        success: function (result) {
+          $(".loading").hide();  
 
           result.forEach(fact => {
             // $(".facts").append("<p class='text-center'>" + fact["fact"] + "</p>");
