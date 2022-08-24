@@ -31,7 +31,8 @@ $(document).ready(function () {
           $(".facts").empty();
 
           result.forEach(fact => {
-            $(".facts").append("<p class='text-center'>" + fact["fact"] + "</p>");
+            // $(".facts").append("<p class='text-center'>" + fact["fact"] + "</p>");
+            $(".facts").append("<div class='card text-center container' style='width: 50rem'><div class='card-body'> <p class='fs-4 text-muted lead'>" + fact["fact"] + "</p></div></div><br>");
           });
         },
         error: function ajaxError(jqXHR) {
