@@ -1,20 +1,6 @@
 var key = config.API_KEY;
 // var key = null;
 
-// $.ajax({
-//     method: 'GET',
-//     url: 'https://api.api-ninjas.com/v1/facts?limit=' + 3,
-//     headers: { 'X-Api-Key': key},
-//     contentType: 'application/json',
-//     success: function(result) {
-//         console.log(result);
-//     },
-//     error: function ajaxError(jqXHR) {
-//         console.error('Error: ', jqXHR.responseText);
-//     }
-// });
-
-
 $(document).ready(function () {
   $(".loading").hide();  
   $(".error").hide();
@@ -44,7 +30,7 @@ $(document).ready(function () {
           
           result.forEach(fact => {
             // $(".facts").append("<p class='text-center'>" + fact["fact"] + "</p>");
-            $(".facts").append("<div class='card text-center container shadow-sm p-3 mb-5 bg-body rounded' style='width: 50rem'><div class='card-body'> <p class='fs-4 text-muted lead'>" + fact["fact"] + "</p></div></div><br>");
+            $(".facts").append("<div class='card text-center container shadow-sm p-3 bg-body rounded' style='width: 50rem; margin-bottom: 5px'><div class='card-body'> <p class='fs-4 text-muted lead'>" + fact["fact"] + "</p></div></div><br>");
           });
         },
 
@@ -64,9 +50,3 @@ $(document).ready(function () {
   });
 });
 
-
-$("#flexSwitchCheckDefault").change(function() {
-  if(this.checked) {
-    console.log("Clicked")
-  }
-});
