@@ -38,7 +38,8 @@ $(document).ready(function () {
         },
         
         success: function (result) {
-          $(".loading").hide();  
+          $(".loading").hide(); 
+          // console.log("Done")
           $(".error").hide();
           
           result.forEach(fact => {
@@ -46,11 +47,16 @@ $(document).ready(function () {
             $(".facts").append("<div class='card text-center container shadow-sm p-3 mb-5 bg-body rounded' style='width: 50rem'><div class='card-body'> <p class='fs-4 text-muted lead'>" + fact["fact"] + "</p></div></div><br>");
           });
         },
+
         error: function ajaxError(jqXHR) {
+          jqXHR.abort();
           $(".loading").hide();  
           $(".error").show();
           console.error("Error: ", jqXHR.responseText);
-          $(".repeat").click(ajaxCall());
+          $("#repeat").click(function (e) {
+            e.preventDefault();
+            ajaxCall();
+            });
         },
       });
     }
