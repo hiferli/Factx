@@ -1,6 +1,5 @@
 var key = config.API_KEY;
-
-function updateLimit(limit) {}
+// var key = null;
 
 // $.ajax({
 //     method: 'GET',
@@ -15,14 +14,16 @@ function updateLimit(limit) {}
 //     }
 // });
 
+
 $(document).ready(function () {
   $(".loading").hide();  
-
-  $("#limit").change(function () {
+  $(".error").hide();
+  
+  $("#limit").on("change" , function ajaxCall () {
     var limit = $("#limit").val();
     // console.log(limit);
     $("#limitNumber").text(limit);
-
+    
     if(limit){
       $.ajax({
         method: "GET",
@@ -33,18 +34,23 @@ $(document).ready(function () {
         beforeSend: function () {
           $(".facts").empty();
           $(".loading").show();  
+          $(".error").hide();
         },
         
         success: function (result) {
           $(".loading").hide();  
-
+          $(".error").hide();
+          
           result.forEach(fact => {
             // $(".facts").append("<p class='text-center'>" + fact["fact"] + "</p>");
-            $(".facts").append("<div class='card text-center container' style='width: 50rem'><div class='card-body'> <p class='fs-4 text-muted lead'>" + fact["fact"] + "</p></div></div><br>");
+            $(".facts").append("<div class='card text-center container shadow-sm p-3 mb-5 bg-body rounded' style='width: 50rem'><div class='card-body'> <p class='fs-4 text-muted lead'>" + fact["fact"] + "</p></div></div><br>");
           });
         },
         error: function ajaxError(jqXHR) {
+          $(".loading").hide();  
+          $(".error").show();
           console.error("Error: ", jqXHR.responseText);
+          $(".repeat").click(ajaxCall());
         },
       });
     }

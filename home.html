@@ -3,46 +3,55 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Random Fact Here!</title>
+    <title>Random Facts Here!</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
 
-    <h1 class="text-center">Random Fact Here!</h1>
+    
+    <h1 class="text-center">Random Facts Here!</h1>
     
     <br> <h2 class="text-center">How Many?</h2> <br>
     
-    <div class="container text-center">
-      <input type="range" id="limit" name="limit" min="0" max="10">
+    <div class="container text-center meter">
+      <input type="range" id="limit" name="limit" min="1" max="10">
       <h3 id="limitNumber">5</h3>
     </div>
-
+    
     <br>
-
+    
     <div class="d-flex justify-content-center position-absolute top-50 start-50 translate-middle">
       <div class="loading spinner-border" style="width: 5rem; height: 5rem;" role="status">
         <span class="visually-hidden">Loading...</span>
       </div>
     </div>
-
+    
     <div class="container facts">
-
-      <div class="card text-center container" style="width: 50rem">
+      
+      <div class="card text-center container shadow-sm p-3 mb-5 bg-body rounded" style="width: 50rem">
         <div class="card-body" >
           <p class="fs-4 text-muted lead">
             Drag the pointer to get em' all!
           </p>
         </div>
       </div>
-
+      
     </div>
-
-
+    
+    <div class="shadow p-3 mb-5 bg-body rounded position-absolute top-50 start-50 translate-middle card text-center error  alert alert-danger" style="width: 20rem;">
+      <div class="card-body">
+        <h5 class="card-title text-danger">Error</h5><hr>
+        <p class="card-text"><span class = "text-warning">As a matter of Fact... </span><br>There was an error while loading the fact(s). You can check your internet connection or click the button below to get the facts back!.</p>
+        <button id="repeat" class="btn btn-primary">Try Again</button>
+      </div>
+    </div>
+    
+    
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script type='text/javascript' src='config.js'></script>
     <script src="index.js"></script>
   </body>
-</html>
+  </html>
