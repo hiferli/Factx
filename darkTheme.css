@@ -1,0 +1,30 @@
+:root {
+    --dark_theme_color: #2C3333;
+    --font_color: #E7F6F2;
+
+    --card_dark_background: #395B64;
+  }
+
+* {
+    background-color: var(--dark_theme_color) !important;
+    color: var(--font_color);
+    margin: 0px;
+    padding: 0px;
+}
+
+.card , .card-body , .lead , .card-title , .card-text , .text-warning {
+    background-color: var(--card_dark_background) !important;
+}
+
+.lead {
+    color: var(--font_color)  !important;
+}
+
+#flexSwitchCheckDefault {
+    background-color: var(--font_color);
+}
+
+#repeat {
+    background-color: #A5C9CA !important;
+    color: var(--dark_theme_color);
+}
