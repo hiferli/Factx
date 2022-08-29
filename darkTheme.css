@@ -1,15 +1,13 @@
 :root {
-    --dark_theme_color: #2C3333;
+    --dark_theme_color: #1F1B24;
     --font_color: #E7F6F2;
 
-    --card_dark_background: #395B64;
+    --card_dark_background: #332940;
   }
 
 * {
     background-color: var(--dark_theme_color) !important;
     color: var(--font_color);
-    margin: 0px;
-    padding: 0px;
 }
 
 .card , .card-body , .lead , .card-title , .card-text , .text-warning {
@@ -27,4 +25,16 @@
 #repeat {
     background-color: #A5C9CA !important;
     color: var(--dark_theme_color);
+}
+
+.text-danger {
+    color: #e2423f;
+}
+
+.material-symbols-outlined {
+    background-color: var(--card_dark_background) !important    ;
+}
+
+.error {
+    border-color: var(--card_dark_background);
 }

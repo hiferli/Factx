@@ -1,0 +1,22 @@
+:root {
+    --light_theme_color: #fafafa;
+    --font_color: #484b6a;
+
+    --card_light_background: #9394a5;
+  }
+
+
+* {
+    background-color: var(--light_theme_color) !important;
+    color: var(--font_color) !important;
+}
+
+
+.card , .card-body , .lead , .card-title , .card-text , .text-warning {
+    background-color: var(--card_dark_background) !important;
+    border-color: var(--font_color);
+}
+
+#flexSwitchCheckDefault {
+    background-color: var(--font_color);
+}

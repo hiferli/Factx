@@ -1,0 +1,9 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.header{
+    font-family: 'Bree Serif', serif;
+    font-size: 45px;
+}
