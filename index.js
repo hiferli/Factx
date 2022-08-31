@@ -2,6 +2,20 @@ var key = config.API_KEY;
 // var key = null;
 
 $(document).ready(function () {
+
+  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    $("#mode").prop("href" , "darkTheme.css");
+    $('#flexSwitchCheckDefault').prop('checked', true);
+  }
+  
+  if(localStorage.getItem("Theme") == "Light"){
+    $("#mode").prop("href" , "lightTheme.css");
+    $('#flexSwitchCheckDefault').prop('checked', false);
+  } else if(localStorage.getItem("Theme") == "Dark"){
+    $("#mode").prop("href" , "darkTheme.css");
+    $('#flexSwitchCheckDefault').prop('checked', true);
+  }
+
   $(".loading").hide();  
   $(".error").hide();
   

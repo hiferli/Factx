@@ -19,7 +19,8 @@
 }
 
 #flexSwitchCheckDefault {
-    background-color: var(--font_color);
+    /* background-color: var(--font_color) ; */
+    border-color: var(--font_color) !important;
 }
 
 #repeat {
