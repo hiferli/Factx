@@ -32,14 +32,14 @@ $(document).ready(function () {
         contentType: "application/json",
         
         beforeSend: function () {
-          $(".somerandomname").hide();
+          $("#limit").hide();
           $(".facts").empty();
           $(".loading").show();  
           $(".error").hide();
         },
         
         success: function (result) {
-          $(".somerandomname").show();
+          $("#limit").show();
           $(".loading").hide(); 
           // console.log("Done")
           $(".error").hide();
@@ -57,6 +57,7 @@ $(document).ready(function () {
           console.error("Error: ", jqXHR.responseText);
           $("#repeat").click(function (e) {
             e.preventDefault();
+            jqXHR.abort();
             ajaxCall();
             });
         },
