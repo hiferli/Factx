@@ -44,7 +44,7 @@ $(document).ready(function () {
           
           result.forEach(fact => {
             // $(".facts").append("<p class='text-center'>" + fact["fact"] + "</p>");
-            $(".facts").append("<div class='card text-center container shadow-sm p-3 bg-body rounded' style='width: 50rem; margin-bottom: 5px'><div class='card-body'> <p class='fs-4 text-muted lead'>" + fact["fact"] + "</p></div></div><br>");
+            $(".facts").append("<div class='card text-center container shadow-sm p-3 bg-body rounded' style='width: 85%; margin-bottom: 5px'><div class='card-body'> <p class='fs-4 text-muted lead'>" + fact["fact"] + "</p></div></div><br>");
           });
         },
 
