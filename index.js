@@ -32,12 +32,14 @@ $(document).ready(function () {
         contentType: "application/json",
         
         beforeSend: function () {
+          $(".somerandomname").hide();
           $(".facts").empty();
           $(".loading").show();  
           $(".error").hide();
         },
         
         success: function (result) {
+          $(".somerandomname").show();
           $(".loading").hide(); 
           // console.log("Done")
           $(".error").hide();
